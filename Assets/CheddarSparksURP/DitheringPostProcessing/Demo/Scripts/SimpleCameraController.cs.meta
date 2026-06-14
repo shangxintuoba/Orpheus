@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 12bf0732f7a06514a87acba84db01e30
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/Scripts/SimpleCameraController.cs
+  uploadId: 895272

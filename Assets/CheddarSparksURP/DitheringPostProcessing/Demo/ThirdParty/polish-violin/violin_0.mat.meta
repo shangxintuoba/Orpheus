@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 49d640711f6224c4189e52ae50f196d2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/ThirdParty/polish-violin/violin_0.mat
+  uploadId: 895272

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 41e0e61b7df4d7a4c8a23cf0841616c4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Scripts/ShaderPropertyIDs.cs
+  uploadId: 895272

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9ebe42e4ee8697c4c8c149e8afa54842
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/ThirdParty/TV/tv_belweder.mat
+  uploadId: 895272

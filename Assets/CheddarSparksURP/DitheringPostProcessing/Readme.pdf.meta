@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 120318bb276da4d46b602a3d50b30de1
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Readme.pdf
+  uploadId: 895272

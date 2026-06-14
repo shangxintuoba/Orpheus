@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5d526b5b7796a74478efd11e38df3b44
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/ThirdParty/TV/tv_detale_polysk.mat
+  uploadId: 895272

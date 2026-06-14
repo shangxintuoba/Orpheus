@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8007bd304a32814409e61d749705635b
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Third-Party Notices.txt
+  uploadId: 895272

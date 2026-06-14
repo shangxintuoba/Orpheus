@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b868edd42921bb04bbe66620417975b6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/RenderPipeline/Demo
+    Dithering Universal Renderer Data.asset
+  uploadId: 895272

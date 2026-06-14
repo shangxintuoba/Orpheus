@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e52b0fd7c7a3ebc45aee3ad0a8da3a2e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/ThirdParty/TV/TV.prefab
+  uploadId: 895272

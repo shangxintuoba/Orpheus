@@ -1,0 +1,19 @@
+{
+    "name": "com.CheddarSparks.DitheringPostprocessing.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:01576d43f1e9f65478174320070a4076",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

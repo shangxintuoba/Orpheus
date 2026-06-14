@@ -1,0 +1,30 @@
+﻿This asset includes third-party content used solely for demonstration purposes in the demo scene. The content is licensed under Creative Commons Zero (CC0) or similarly permissive terms, and is not part of the main functionality of the asset.
+
+
+Black and white “Belweder” — OT 1782 TV set
+License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://sketchfab.com/3d-models/black-and-white-belweder-ot-1782-tv-set-5c2be264f3ce4e11ac9387505e0bcea0
+
+Lion Statue - optimized
+License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://sketchfab.com/3d-models/lion-statue-optimized-62662d27c94d4994b2479b8de3a66ca7
+
+Telephone
+License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://sketchfab.com/3d-models/telephone-e2389b65271f4a57906fe194dbd0e56a
+
+European roller
+License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://sketchfab.com/3d-models/european-roller-61266984d15947de906004fc207f8c5f
+
+“Polish” violin
+License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://sketchfab.com/3d-models/polish-violin-14f79e288012404cb7ebb21df3acca2f
+
+Wood Floor 041
+License: CC0 https://docs.ambientcg.com/license/
+Source: https://ambientcg.com/view?id=WoodFloor041
+
+Concrete 032
+License: CC0 https://docs.ambientcg.com/license/
+Source: https://ambientcg.com/view?id=Concrete032

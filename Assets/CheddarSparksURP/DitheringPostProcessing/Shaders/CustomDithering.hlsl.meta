@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c0fb853e559b142419da430c4dbb559f
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Shaders/CustomDithering.hlsl
+  uploadId: 895272

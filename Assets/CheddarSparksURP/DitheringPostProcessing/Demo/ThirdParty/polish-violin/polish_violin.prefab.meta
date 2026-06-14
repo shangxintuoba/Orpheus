@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ca7fa61a0c026084fa279391b8c4efd7
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/ThirdParty/polish-violin/polish_violin.prefab
+  uploadId: 895272

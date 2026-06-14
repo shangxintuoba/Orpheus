@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 392530b53efbb6d4a8193cafa881834b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/ThirdParty/telephone/telephone.prefab
+  uploadId: 895272

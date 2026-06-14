@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 54072840636698b498101a5a8b91049e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/Textures/GradientRT_1.renderTexture
+  uploadId: 895272

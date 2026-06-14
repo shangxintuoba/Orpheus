@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 45b1ba98d37607a4bbe682e71b682a90
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/ThirdParty/european_roller/european_roller.prefab
+  uploadId: 895272

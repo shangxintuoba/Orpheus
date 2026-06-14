@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7d4743b1c238df047a16bac2e10d6445
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Shaders/CustomDitheringPostProcessing.mat
+  uploadId: 895272

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1a7d96704c14e9a41827555f1ec8a807
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/ThirdParty/lion/lion_statue_-_optimized.prefab
+  uploadId: 895272

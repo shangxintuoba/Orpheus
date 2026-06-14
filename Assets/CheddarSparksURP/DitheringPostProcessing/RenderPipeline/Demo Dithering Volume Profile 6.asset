@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6483524260710616889
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ba530ad8072454ea1d4be31d5379a2, type: 3}
+  m_Name: CustomDitheringVolumeComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
+  ditherTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: c7eee3a595959b74f8917349756e03e0, type: 3}
+  ditherAmount:
+    m_OverrideState: 1
+    m_Value: 0
+  ditherSize:
+    m_OverrideState: 1
+    m_Value: 3
+  ditherColorA:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  ditherColorB:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  sceneColorAmount:
+    m_OverrideState: 1
+    m_Value: 1
+  colorBandsAmount:
+    m_OverrideState: 1
+    m_Value: 1
+  colorBandsCountGeneral:
+    m_OverrideState: 1
+    m_Value: 64
+  colorBandsCountR:
+    m_OverrideState: 0
+    m_Value: 15.45
+  colorBandsCountG:
+    m_OverrideState: 0
+    m_Value: 4.65
+  colorBandsCountB:
+    m_OverrideState: 0
+    m_Value: 3.59
+  outlineMode:
+    m_OverrideState: 1
+    m_Value: 0
+  outlineWidth:
+    m_OverrideState: 1
+    m_Value: 2.73
+  outlineThreshold:
+    m_OverrideState: 1
+    m_Value: 1
+  outlineColor:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 0.84313726}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: Demo Dithering Volume Profile 6
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -6483524260710616889}

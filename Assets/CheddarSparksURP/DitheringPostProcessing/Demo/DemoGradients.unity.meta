@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 18c26cd9bb322ed498fa6008f082a36e
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/DemoGradients.unity
+  uploadId: 895272

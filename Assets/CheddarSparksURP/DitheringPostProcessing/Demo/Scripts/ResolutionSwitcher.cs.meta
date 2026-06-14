@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b50ab090c1721f34caa7c779718652b2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/Scripts/ResolutionSwitcher.cs
+  uploadId: 895272

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f774241da3dc7e445b5d4b579e96a6c6
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/Demo/Scripts/com.CheddarSparks.DitheringPostprocessing.Demo.asmdef
+  uploadId: 895272

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e081cde0a20f944459769d2fe9e08780
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 328633
+  packageName: "DitherCraft \u2013 Custom Dithering Post Processing"
+  packageVersion: 1.0
+  assetPath: Assets/CheddarSparksURP/DitheringPostProcessing/RenderPipeline/Demo
+    Dithering Volume Profile 2.asset
+  uploadId: 895272
