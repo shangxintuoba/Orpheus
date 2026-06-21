@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Value: {fileID: 2800000, guid: 604ab54d59245e4458e148cb9535b3cd, type: 3}
   ditherAmount:
     m_OverrideState: 1
-    m_Value: 0.008
+    m_Value: 0
   ditherSize:
     m_OverrideState: 1
     m_Value: 3
