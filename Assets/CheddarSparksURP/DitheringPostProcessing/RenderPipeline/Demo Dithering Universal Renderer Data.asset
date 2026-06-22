@@ -15,7 +15,6 @@ MonoBehaviour:
   m_Active: 1
   _postProMaterial: {fileID: 2100000, guid: 7d4743b1c238df047a16bac2e10d6445, type: 2}
   _usePostProcessingVolumes: 1
-  _scaleAnchor: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

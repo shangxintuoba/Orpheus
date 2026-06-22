@@ -32,13 +32,13 @@ MonoBehaviour:
     m_Value: 1
   ditherTexture:
     m_OverrideState: 1
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: 8092cc2d0f72b6f46ab61f7ebaa4ec30, type: 3}
   ditherAmount:
     m_OverrideState: 1
-    m_Value: 0.24
+    m_Value: 0.384
   ditherSize:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   ditherColorA:
     m_OverrideState: 1
     m_Value: {r: 0.83396226, g: 0.3697757, b: 0.3697757, a: 1}
@@ -64,14 +64,14 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 8
   outlineMode:
-    m_OverrideState: 0
-    m_Value: 2
+    m_OverrideState: 1
+    m_Value: 1
   outlineWidth:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   outlineThreshold:
-    m_OverrideState: 0
-    m_Value: 0.2
+    m_OverrideState: 1
+    m_Value: 0.025
   outlineColor:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}

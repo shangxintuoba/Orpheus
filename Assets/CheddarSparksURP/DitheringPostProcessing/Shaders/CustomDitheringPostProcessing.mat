@@ -12,7 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _OUTLINE_OFF
+  - _OUTLINE_DEPTH
   m_InvalidKeywords:
   - _SHOWOUTLINE
   m_LightmapFlags: 4
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _DitherTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8092cc2d0f72b6f46ab61f7ebaa4ec30, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -58,15 +58,15 @@ Material:
     - _ColorBandsCountG: 8
     - _ColorBandsCountR: 8
     - _ColorBrightness: 0.18
-    - _DitherAmount: 0.24
+    - _DitherAmount: 0.384
     - _DitherScale: 170.4
-    - _DitherSize: 2
+    - _DitherSize: 1
     - _DitherSpread: 2.93
     - _GreyScale: 1
     - _OUTLINE: 1
     - _OutlineSmoothness: 0.004
-    - _OutlineThreshold: 0.2
-    - _OutlineWidth: 0
+    - _OutlineThreshold: 0.025
+    - _OutlineWidth: 1
     - _SHOWOUTLINE: 1
     - _SceneColorAmount: 0
     m_Colors:
