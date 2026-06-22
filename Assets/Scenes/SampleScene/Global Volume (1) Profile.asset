@@ -41,28 +41,28 @@ MonoBehaviour:
     m_Value: 1
   ditherColorA:
     m_OverrideState: 1
-    m_Value: {r: 0.83396226, g: 0.3697757, b: 0.3697757, a: 1}
+    m_Value: {r: 0.89433956, g: 0.48429328, b: 0.48429328, a: 1}
   ditherColorB:
     m_OverrideState: 1
-    m_Value: {r: 0.20978993, g: 0.25693482, b: 0.3132075, a: 1}
+    m_Value: {r: 0.09433961, g: 0.02474189, b: 0.027061813, a: 1}
   sceneColorAmount:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   colorBandsAmount:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   colorBandsCountGeneral:
     m_OverrideState: 0
     m_Value: 0
   colorBandsCountR:
-    m_OverrideState: 0
-    m_Value: 8
+    m_OverrideState: 1
+    m_Value: 2
   colorBandsCountG:
-    m_OverrideState: 0
-    m_Value: 8
+    m_OverrideState: 1
+    m_Value: 2
   colorBandsCountB:
-    m_OverrideState: 0
-    m_Value: 8
+    m_OverrideState: 1
+    m_Value: 2
   outlineMode:
     m_OverrideState: 1
     m_Value: 1

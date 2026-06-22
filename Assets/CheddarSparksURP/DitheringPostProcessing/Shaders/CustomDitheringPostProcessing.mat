@@ -52,11 +52,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorAmount: 1
-    - _ColorBandsAmount: 0
+    - _ColorBandsAmount: 1
     - _ColorBandsCount: 7
-    - _ColorBandsCountB: 8
-    - _ColorBandsCountG: 8
-    - _ColorBandsCountR: 8
+    - _ColorBandsCountB: 2
+    - _ColorBandsCountG: 2
+    - _ColorBandsCountR: 2
     - _ColorBrightness: 0.18
     - _DitherAmount: 0.384
     - _DitherScale: 170.4
@@ -68,11 +68,11 @@ Material:
     - _OutlineThreshold: 0.025
     - _OutlineWidth: 1
     - _SHOWOUTLINE: 1
-    - _SceneColorAmount: 0
+    - _SceneColorAmount: 1
     m_Colors:
     - _DitherColor: {r: 1, g: 1, b: 1, a: 1}
-    - _DitherColorA: {r: 0.83396226, g: 0.3697757, b: 0.3697757, a: 1}
-    - _DitherColorB: {r: 0.20978993, g: 0.25693482, b: 0.3132075, a: 1}
+    - _DitherColorA: {r: 0.89433956, g: 0.48429328, b: 0.48429328, a: 1}
+    - _DitherColorB: {r: 0.09433961, g: 0.02474189, b: 0.027061813, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _Resolution: {r: 800, g: 600, b: 0, a: 0}
   m_BuildTextureStacks: []
