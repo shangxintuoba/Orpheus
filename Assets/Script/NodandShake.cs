@@ -23,7 +23,7 @@ public class NodandShake : MonoBehaviour
     private float yLegAccum = 0f;
     private float answerTimer = 0f;
 
-    [SerializeField] private bool isInAnsweringMode; // trigger mouse detection only when isInAnsweringMode
+    public bool isInAnsweringMode; // trigger mouse detection only when isInAnsweringMode
 
     void Update()
     {
@@ -86,6 +86,7 @@ public class NodandShake : MonoBehaviour
         answerTimer = 0f;
         ResetDeltas();
         Debug.Log(Answer);
+        isInAnsweringMode = false;
     }
 
     private void HandleAnswerLifetime()
@@ -131,5 +132,4 @@ public class NodandShake : MonoBehaviour
 
     public bool IsInAnsweringMode => isInAnsweringMode;
 
-    public int GetAnswer() => Answer;
 }
