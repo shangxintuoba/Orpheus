@@ -54,25 +54,25 @@ Material:
     - _ColorAmount: 1
     - _ColorBandsAmount: 1
     - _ColorBandsCount: 7
-    - _ColorBandsCountB: 8
-    - _ColorBandsCountG: 8
-    - _ColorBandsCountR: 8
+    - _ColorBandsCountB: 4
+    - _ColorBandsCountG: 6
+    - _ColorBandsCountR: 4
     - _ColorBrightness: 0.18
-    - _DitherAmount: 0.384
+    - _DitherAmount: 0.487
     - _DitherScale: 170.4
     - _DitherSize: 1
     - _DitherSpread: 2.93
     - _GreyScale: 1
     - _OUTLINE: 1
     - _OutlineSmoothness: 0.004
-    - _OutlineThreshold: 0.025
-    - _OutlineWidth: 1
+    - _OutlineThreshold: 0.002
+    - _OutlineWidth: 3
     - _SHOWOUTLINE: 1
-    - _SceneColorAmount: 0
+    - _SceneColorAmount: 0.684
     m_Colors:
     - _DitherColor: {r: 1, g: 1, b: 1, a: 1}
-    - _DitherColorA: {r: 0.6707606, g: 0.7484276, b: 0.69664955, a: 1}
-    - _DitherColorB: {r: 0.09433961, g: 0.02474189, b: 0.027061813, a: 1}
+    - _DitherColorA: {r: 0.7735849, g: 0.4938293, b: 0.4938293, a: 1}
+    - _DitherColorB: {r: 0.18238991, g: 0.044163577, b: 0.044163577, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _Resolution: {r: 800, g: 600, b: 0, a: 0}
   m_BuildTextureStacks: []

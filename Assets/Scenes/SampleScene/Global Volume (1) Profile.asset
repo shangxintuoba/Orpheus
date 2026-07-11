@@ -35,19 +35,19 @@ MonoBehaviour:
     m_Value: {fileID: 2800000, guid: 8092cc2d0f72b6f46ab61f7ebaa4ec30, type: 3}
   ditherAmount:
     m_OverrideState: 1
-    m_Value: 0.384
+    m_Value: 0.487
   ditherSize:
     m_OverrideState: 1
     m_Value: 1
   ditherColorA:
     m_OverrideState: 1
-    m_Value: {r: 0.6707606, g: 0.7484276, b: 0.69664955, a: 1}
+    m_Value: {r: 0.7735849, g: 0.4938293, b: 0.4938293, a: 1}
   ditherColorB:
     m_OverrideState: 1
-    m_Value: {r: 0.09433961, g: 0.02474189, b: 0.027061813, a: 1}
+    m_Value: {r: 0.18238991, g: 0.044163577, b: 0.044163577, a: 1}
   sceneColorAmount:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.684
   colorBandsAmount:
     m_OverrideState: 1
     m_Value: 1
@@ -56,22 +56,22 @@ MonoBehaviour:
     m_Value: 0
   colorBandsCountR:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 4
   colorBandsCountG:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 6
   colorBandsCountB:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 4
   outlineMode:
     m_OverrideState: 1
     m_Value: 1
   outlineWidth:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 3
   outlineThreshold:
     m_OverrideState: 1
-    m_Value: 0.025
+    m_Value: 0.002
   outlineColor:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
