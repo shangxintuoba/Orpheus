@@ -15,8 +15,7 @@ public class NodandShake : MonoBehaviour
 
     private float DeltaYes;
     private float DeltaNo;
-    private int Answer = 2;
-
+    public int Answer { get; private set; } = 2;
     private int xDirection = 0;
     private int yDirection = 0;
     private float xLegAccum = 0f;
