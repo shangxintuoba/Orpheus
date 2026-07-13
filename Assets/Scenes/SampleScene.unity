@@ -3409,7 +3409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8d0cac42641ec4c9945e0d608e2467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  SubtitleText: {fileID: 0}
+  SubtitleText: {fileID: 483669362}
+  startID: 0
 --- !u!4 &1268238415
 Transform:
   m_ObjectHideFlags: 0
