@@ -1,0 +1,62 @@
+[
+  {
+    "ID": 0,
+    "Character": "Narrator",
+    "Text": "...",
+    "nextID": 1,
+    "isAChoice": false,
+    "nextID_true": 0,
+    "nextID_false": 0,
+    "nextID_notAnswered": 0
+  },
+  {
+    "ID": 1,
+    "Character": "Narrator",
+    "Text": "Standing on flagstones of the sidewalk at the entrance to Hades",
+    "nextID": 2,
+    "isAChoice": false,
+    "nextID_true": 0,
+    "nextID_false": 0,
+    "nextID_notAnswered": 0
+  },
+  {
+    "ID": 2,
+    "Character": "Narrator",
+    "Text": "Orpheus hunched in a gust of wind",
+    "nextID": 3,
+    "isAChoice": false,
+    "nextID_true": 0,
+    "nextID_false": 0,
+    "nextID_notAnswered": 0
+  },
+  {
+    "ID": 3,
+    "Character": "Narrator",
+    "Text": "That tore at his coat, rolled past in waves of fog,",
+    "nextID": 4,
+    "isAChoice": false,
+    "nextID_true": 0,
+    "nextID_false": 0,
+    "nextID_notAnswered": 0
+  },
+  {
+    "ID": 4,
+    "Character": "Narrator",
+    "Text": "Tossed the leaves of the trees. The headlights of cars",
+    "nextID": 5,
+    "isAChoice": false,
+    "nextID_true": 0,
+    "nextID_false": 0,
+    "nextID_notAnswered": 0
+  },
+  {
+    "ID": 5,
+    "Character": "Narrator",
+    "Text": "Flared and dimmed in each succeeding wave.",
+    "nextID": 6,
+    "isAChoice": false,
+    "nextID_true": 0,
+    "nextID_false": 0,
+    "nextID_notAnswered": 0
+  }
+]
