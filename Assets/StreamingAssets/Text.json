@@ -7,7 +7,9 @@
     "isAChoice": false,
     "nextID_true": 0,
     "nextID_false": 0,
-    "nextID_notAnswered": 0
+    "nextID_notAnswered": 0,
+    "playtime": 1.0,
+    "isAutoPlay": true
   },
   {
     "ID": 1,
@@ -17,7 +19,9 @@
     "isAChoice": false,
     "nextID_true": 0,
     "nextID_false": 0,
-    "nextID_notAnswered": 0
+    "nextID_notAnswered": 0,
+    "playtime": 3.0,
+    "isAutoPlay": true
   },
   {
     "ID": 2,
@@ -27,7 +31,9 @@
     "isAChoice": false,
     "nextID_true": 0,
     "nextID_false": 0,
-    "nextID_notAnswered": 0
+    "nextID_notAnswered": 0,
+    "playtime": 3.0,
+    "isAutoPlay": true
   },
   {
     "ID": 3,
@@ -37,7 +43,9 @@
     "isAChoice": false,
     "nextID_true": 0,
     "nextID_false": 0,
-    "nextID_notAnswered": 0
+    "nextID_notAnswered": 0,
+    "playtime": 3.0,
+    "isAutoPlay": true
   },
   {
     "ID": 4,
@@ -47,7 +55,9 @@
     "isAChoice": false,
     "nextID_true": 0,
     "nextID_false": 0,
-    "nextID_notAnswered": 0
+    "nextID_notAnswered": 0,
+    "playtime": 3.0,
+    "isAutoPlay": true
   },
   {
     "ID": 5,
@@ -57,6 +67,8 @@
     "isAChoice": false,
     "nextID_true": 0,
     "nextID_false": 0,
-    "nextID_notAnswered": 0
+    "nextID_notAnswered": 0,
+    "playtime": 3.0,
+    "isAutoPlay": true
   }
 ]

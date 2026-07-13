@@ -26,10 +26,11 @@ try:
 except ImportError:
     openpyxl = None
 
-BOOL_COLUMNS = {"isAChoice"}
+BOOL_COLUMNS = {"isAChoice", "isAutoPlay"}
 INT_COLUMNS = {"ID", "nextID", "nextID_true", "nextID_false", "nextID_notAnswered"}
+FLOAT_COLUMNS = {"playtime"}
 STRING_COLUMNS = {"Character", "Text"}
-REQUIRED_COLUMNS = BOOL_COLUMNS | INT_COLUMNS | STRING_COLUMNS
+REQUIRED_COLUMNS = BOOL_COLUMNS | INT_COLUMNS | FLOAT_COLUMNS | STRING_COLUMNS
 
 
 def to_bool(value):
@@ -46,8 +47,50 @@ def to_int(value):
     return int(value)
 
 
+def to_float(value):
+    if value is None or str(value).strip() == "":
+        return 0.0
+    return float(value)
+
+
 def to_str(value):
     return "" if value is None else str(value)
+
+
+def find_header_row(rows):
+    """Scans rows top-down for the first one that contains most/all of the
+    required column names (case-insensitively), instead of assuming row 1
+    is always the header. Returns (header_row_index, col_index_map)."""
+    required_lower = {name.lower() for name in REQUIRED_COLUMNS}
+
+    best_row_idx = None
+    best_col_index = None
+    best_match_count = 0
+
+    for row_idx, row in enumerate(rows):
+        headers_lower = [str(c).strip().lower() if c is not None else "" for c in row]
+        match_count = sum(1 for h in headers_lower if h in required_lower)
+        if match_count > best_match_count:
+            best_match_count = match_count
+            best_row_idx = row_idx
+            # Map each REQUIRED_COLUMNS canonical name -> its column index,
+            # by matching case-insensitively against this row's headers.
+            best_col_index = {}
+            for name in REQUIRED_COLUMNS:
+                if name.lower() in headers_lower:
+                    best_col_index[name] = headers_lower.index(name.lower())
+
+    if best_row_idx is None or best_match_count < len(REQUIRED_COLUMNS):
+        found = set(best_col_index.keys()) if best_col_index else set()
+        missing = REQUIRED_COLUMNS - found
+        raise ValueError(
+            f"Could not find a header row containing all required columns.\n"
+            f"Missing (or misnamed): {', '.join(sorted(missing))}\n\n"
+            f"Required column names (case doesn't matter):\n"
+            f"{', '.join(sorted(REQUIRED_COLUMNS))}"
+        )
+
+    return best_row_idx, best_col_index
 
 
 def convert(excel_path: Path, json_path: Path):
@@ -60,19 +103,11 @@ def convert(excel_path: Path, json_path: Path):
     if not rows:
         raise ValueError("The selected sheet is empty.")
 
-    headers = [str(h).strip() if h is not None else "" for h in rows[0]]
-
-    missing = REQUIRED_COLUMNS - set(headers)
-    if missing:
-        raise ValueError(
-            f"Missing required column(s): {', '.join(sorted(missing))}\n"
-            f"Found columns: {', '.join(headers)}"
-        )
-
-    col_index = {name: headers.index(name) for name in headers if name}
+    header_row_idx, col_index = find_header_row(rows)
+    data_rows = rows[header_row_idx + 1:]
 
     entries = []
-    for row_num, row in enumerate(rows[1:], start=2):
+    for row_num, row in enumerate(data_rows, start=header_row_idx + 2):
         if all(cell is None for cell in row):
             continue
 
@@ -90,6 +125,8 @@ def convert(excel_path: Path, json_path: Path):
                 "nextID_true": to_int(cell("nextID_true")),
                 "nextID_false": to_int(cell("nextID_false")),
                 "nextID_notAnswered": to_int(cell("nextID_notAnswered")),
+                "playtime": to_float(cell("playtime")),
+                "isAutoPlay": to_bool(cell("isAutoPlay")),
             }
         except (ValueError, TypeError) as e:
             raise ValueError(f"Row {row_num}: {e}")

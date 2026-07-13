@@ -7,7 +7,7 @@ using System.IO;
 using UnityEngine.InputSystem;
 
 [Serializable]
-public class TextData // Single line of dialogue. Field names must match the JSON keys exactly
+public class TextData // Single line of dialogue. Field names must match the JSON keys exactly, converter are defined by the restrict name, need to change converter if new variable added
 {
     public int ID;
     public string Character;
@@ -17,6 +17,9 @@ public class TextData // Single line of dialogue. Field names must match the JSO
     public int nextID_true;
     public int nextID_false;
     public int nextID_notAnswered;
+    public float playtime;
+    public bool isAutoPlay;
+
 }
 
 [System.Serializable]
@@ -27,6 +30,8 @@ public class TextDataList
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance { get; private set; }
+
     private Keyboard keyboard;
 
     public TextMeshProUGUI SubtitleText;
@@ -45,9 +50,14 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typingCoroutine;
     private bool isTyping = false;
 
+    [Header("Auto Play")]
+    private Coroutine autoAdvanceCoroutine;
+
     //load text
     void Awake()
     {
+        Instance = this;
+
         keyboard = Keyboard.current;
 
         string path = Path.Combine(Application.streamingAssetsPath, "Text.json");
@@ -90,6 +100,11 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        // Cancel any pending auto-advance timer from the previous line —
+        // otherwise a stale timer could fire later and skip a line the
+        // player hasn't even seen yet.
+        CancelAutoAdvance();
+
         CurrentTextID = CurrentText.ID;
         StartTyping(CurrentText.Text);
 
@@ -102,6 +117,11 @@ public class DialogueManager : MonoBehaviour
             // It's a choice line: don't advance automatically.
             // Wait here — call SelectChoice(true/false) from your UI buttons,
             // or call it with a "no answer" timeout, to decide where to go next.
+        }
+
+        if (CurrentText.isAutoPlay)
+        {
+            autoAdvanceCoroutine = StartCoroutine(AutoAdvanceAfterDelay(CurrentText));
         }
     }
 
@@ -151,6 +171,53 @@ public class DialogueManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Waits for the current line to finish typing, then waits its
+    /// "playtime" seconds, then advances automatically — as long as the
+    /// player hasn't already moved on in the meantime.
+    /// </summary>
+    private IEnumerator AutoAdvanceAfterDelay(TextData lineWhenStarted)
+    {
+        // Wait for the typing animation to finish first, so playtime is
+        // always measured from when the full line becomes readable,
+        // not from when it started typing.
+        while (isTyping)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(lineWhenStarted.playtime);
+
+        // Safety check: if the player already advanced (or answered a
+        // choice) manually while we were waiting, CurrentText has changed
+        // — don't act on stale data.
+        if (CurrentText != lineWhenStarted)
+        {
+            yield break;
+        }
+
+        autoAdvanceCoroutine = null;
+
+        if (lineWhenStarted.isAChoice)
+        {
+            // Player didn't answer in time — treat it as "not answered".
+            SelectChoice(null);
+        }
+        else
+        {
+            DoAdvance();
+        }
+    }
+
+    private void CancelAutoAdvance()
+    {
+        if (autoAdvanceCoroutine != null)
+        {
+            StopCoroutine(autoAdvanceCoroutine);
+            autoAdvanceCoroutine = null;
+        }
+    }
+
+    /// <summary>
     /// Debug-only advance: press R to step to the next line and print the
     /// current line's info to the console. Useful for testing dialogue flow
     /// without hooking up UI buttons yet.
@@ -166,6 +233,7 @@ public class DialogueManager : MonoBehaviour
             if (keyboard == null) return;
         }
 
+        //for test
         if (keyboard.rKey.wasPressedThisFrame)
         {
             // First press while typing: just finish revealing the line instantly.
@@ -177,22 +245,31 @@ public class DialogueManager : MonoBehaviour
                 return;
             }
 
-            if (CurrentText != null)
-            {
-                Debug.Log(
-                    $"[DialogueManager] ID: {CurrentText.ID} | Character: {CurrentText.Character} | " +
-                    $"Text: {CurrentText.Text} | isAChoice: {CurrentText.isAChoice} | NextTextID: {NextTextID}"
-                );
-            }
-
-            if (CurrentText != null && CurrentText.isAChoice)
-            {
-                Debug.LogWarning("DialogueManager: current line is a choice — press won't auto-advance. Call SelectChoice() instead.");
-                return;
-            }
-
-            UpdateText();
+            DoAdvance();
         }
+    }
+
+    /// <summary>
+    /// Shared advance logic used by both manual (R key) and automatic
+    /// (isAutoPlay timer) advancement, so they stay in sync.
+    /// </summary>
+    private void DoAdvance()
+    {
+        if (CurrentText != null)
+        {
+            Debug.Log(
+                $"[DialogueManager] ID: {CurrentText.ID} | Character: {CurrentText.Character} | " +
+                $"Text: {CurrentText.Text} | isAChoice: {CurrentText.isAChoice} | NextTextID: {NextTextID}"
+            );
+        }
+
+        if (CurrentText != null && CurrentText.isAChoice)
+        {
+            Debug.LogWarning("DialogueManager: current line is a choice — press won't auto-advance. Call SelectChoice() instead.");
+            return;
+        }
+
+        UpdateText();
     }
 
     /// <summary>
@@ -220,6 +297,16 @@ public class DialogueManager : MonoBehaviour
             NextTextID = CurrentText.nextID_notAnswered;
         }
 
+        UpdateText();
+    }
+
+    /// <summary>
+    /// Call this from another script (e.g. DialogueTrigger) to jump straight
+    /// to a specific dialogue line and start displaying it.
+    /// </summary>
+    public void StartDialogueAt(int id)
+    {
+        NextTextID = id;
         UpdateText();
     }
 
