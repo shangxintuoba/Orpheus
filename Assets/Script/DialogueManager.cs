@@ -1,5 +1,6 @@
 using TMPro;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -28,11 +29,10 @@ public class DialogueManager : MonoBehaviour
 {
     private Keyboard keyboard;
 
-
     public TextMeshProUGUI SubtitleText;
     public static TextDataList textDataList;
 
-    private Dictionary<int, TextData> textDict; 
+    private Dictionary<int, TextData> textDict;
     private TextData CurrentText;
     private int CurrentTextID;
     private int NextTextID;
@@ -40,9 +40,16 @@ public class DialogueManager : MonoBehaviour
     // ID of the very first line of dialogue. Set this to whatever your JSON uses as the start.
     [SerializeField] private int startID = 0;
 
+    [Header("Typing Effect")]
+    [SerializeField] private float typingSpeed = 0.03f; // seconds per character
+    private Coroutine typingCoroutine;
+    private bool isTyping = false;
+
     //load text
     void Awake()
     {
+        keyboard = Keyboard.current;
+
         string path = Path.Combine(Application.streamingAssetsPath, "Text.json");
         string json = File.ReadAllText(path);
         string wrappedJson = "{\"textList\":" + json + "}";
@@ -70,6 +77,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        //for test
         AdvanceText();
     }
 
@@ -83,7 +91,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         CurrentTextID = CurrentText.ID;
-        SubtitleText.text = CurrentText.Text;
+        StartTyping(CurrentText.Text);
 
         if (!CurrentText.isAChoice)
         {
@@ -97,25 +105,89 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Begins revealing the given line one character at a time.
+    /// Cancels any typing effect already in progress first.
+    /// </summary>
+    private void StartTyping(string fullText)
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+        typingCoroutine = StartCoroutine(TypeText(fullText));
+    }
+
+    private IEnumerator TypeText(string fullText)
+    {
+        isTyping = true;
+        SubtitleText.text = "";
+
+        foreach (char c in fullText)
+        {
+            SubtitleText.text += c;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        isTyping = false;
+        typingCoroutine = null;
+    }
+
+    /// <summary>
+    /// Instantly fills in the rest of the current line, skipping the typing animation.
+    /// </summary>
+    private void SkipTyping()
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
+        if (CurrentText != null)
+        {
+            SubtitleText.text = CurrentText.Text;
+        }
+        isTyping = false;
+    }
+
+    /// <summary>
+    /// Debug-only advance: press R to step to the next line and print the
+    /// current line's info to the console. Useful for testing dialogue flow
+    /// without hooking up UI buttons yet.
+    /// </summary>
     public void AdvanceText()
     {
         if (keyboard == null)
         {
+            // Keyboard.current can be null if no keyboard device has been
+            // detected yet (e.g. very first frame). Re-check each call
+            // rather than caching a stale null reference.
             keyboard = Keyboard.current;
             if (keyboard == null) return;
         }
 
         if (keyboard.rKey.wasPressedThisFrame)
         {
+            // First press while typing: just finish revealing the line instantly.
+            // This is standard dialogue-system behavior (press-to-skip-typing,
+            // press-again-to-advance) so players don't accidentally skip lines.
+            if (isTyping)
+            {
+                SkipTyping();
+                return;
+            }
+
             if (CurrentText != null)
             {
-                Debug.Log($"[DialogueManager] ID: {CurrentText.ID} | Character: {CurrentText.Character} | " +
-                          $"Text: {CurrentText.Text} | isAChoice: {CurrentText.isAChoice} | NextTextID: {NextTextID}");
+                Debug.Log(
+                    $"[DialogueManager] ID: {CurrentText.ID} | Character: {CurrentText.Character} | " +
+                    $"Text: {CurrentText.Text} | isAChoice: {CurrentText.isAChoice} | NextTextID: {NextTextID}"
+                );
             }
 
             if (CurrentText != null && CurrentText.isAChoice)
             {
-                Debug.LogWarning("DialogueManager: current line is a choice — won't auto-advance.");
+                Debug.LogWarning("DialogueManager: current line is a choice — press won't auto-advance. Call SelectChoice() instead.");
                 return;
             }
 
