@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.InputSystem;
 
 [Serializable]
 public class TextData // Single line of dialogue. Field names must match the JSON keys exactly
@@ -25,6 +26,9 @@ public class TextDataList
 
 public class DialogueManager : MonoBehaviour
 {
+    private Keyboard keyboard;
+
+
     public TextMeshProUGUI SubtitleText;
     public static TextDataList textDataList;
 
@@ -66,7 +70,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-
+        AdvanceText();
     }
 
     private void UpdateText()
@@ -79,7 +83,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         CurrentTextID = CurrentText.ID;
-        SubtitleText.text = CurrentText.Character + CurrentText.Text;
+        SubtitleText.text = CurrentText.Text;
 
         if (!CurrentText.isAChoice)
         {
@@ -90,6 +94,32 @@ public class DialogueManager : MonoBehaviour
             // It's a choice line: don't advance automatically.
             // Wait here — call SelectChoice(true/false) from your UI buttons,
             // or call it with a "no answer" timeout, to decide where to go next.
+        }
+    }
+
+    public void AdvanceText()
+    {
+        if (keyboard == null)
+        {
+            keyboard = Keyboard.current;
+            if (keyboard == null) return;
+        }
+
+        if (keyboard.rKey.wasPressedThisFrame)
+        {
+            if (CurrentText != null)
+            {
+                Debug.Log($"[DialogueManager] ID: {CurrentText.ID} | Character: {CurrentText.Character} | " +
+                          $"Text: {CurrentText.Text} | isAChoice: {CurrentText.isAChoice} | NextTextID: {NextTextID}");
+            }
+
+            if (CurrentText != null && CurrentText.isAChoice)
+            {
+                Debug.LogWarning("DialogueManager: current line is a choice — won't auto-advance.");
+                return;
+            }
+
+            UpdateText();
         }
     }
 
