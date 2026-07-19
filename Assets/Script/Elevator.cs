@@ -12,8 +12,13 @@ public class Elevator : MonoBehaviour
     public float doorMoveDistance = 1f;
     public float doorSpeed = 2f;
     private bool doorsOpen = false;
+    private bool OnGround = true;
+
+    public float floorHeight = 3f;   // distance between floors
+    public float elevatorSpeed = 1.5f;
 
     private Coroutine doorRoutine;
+    private Coroutine floorRoutine;
 
     public void CloseDoor()
     {
@@ -23,7 +28,13 @@ public class Elevator : MonoBehaviour
         Vector3 targetL = DoorL.transform.position + Vector3.left * doorMoveDistance;
         Vector3 targetR = DoorR.transform.position + Vector3.right * doorMoveDistance;
 
-        StartDoorMove(targetL, targetR);
+        StartCoroutine(CloseThenChangeFloor(targetL, targetR));
+    }
+
+    private IEnumerator CloseThenChangeFloor(Vector3 targetL, Vector3 targetR)
+    {
+        yield return MoveDoors(targetL, targetR);
+        ChangeFloor();
     }
 
     public void OpenDoor()
@@ -42,7 +53,13 @@ public class Elevator : MonoBehaviour
         if (doorRoutine != null)
             StopCoroutine(doorRoutine);
 
-        doorRoutine = StartCoroutine(MoveDoors(targetL, targetR));
+        doorRoutine = StartCoroutine(MoveDoorsWrapper(targetL, targetR));
+    }
+
+    private IEnumerator MoveDoorsWrapper(Vector3 targetL, Vector3 targetR)
+    {
+        yield return MoveDoors(targetL, targetR);
+        doorRoutine = null;
     }
 
     private IEnumerator MoveDoors(Vector3 targetL, Vector3 targetR)
@@ -61,16 +78,34 @@ public class Elevator : MonoBehaviour
 
         DoorL.transform.position = targetL;
         DoorR.transform.position = targetR;
-
-        doorRoutine = null;
     }
 
-    private void UpdateLevelText()
+    public void ChangeFloor()
     {
-        Level_text.text = Level.ToString();
+        if (floorRoutine != null)
+            StopCoroutine(floorRoutine);
+
+        Vector3 targetPos = transform.position + (OnGround ? Vector3.up : Vector3.down) * floorHeight;
+        floorRoutine = StartCoroutine(MoveElevator(targetPos));
+
+        OnGround = !OnGround;
     }
 
-    private void GoToFloor(int floor)
+    private IEnumerator MoveElevator(Vector3 targetPos)
     {
+        Vector3 startPos = transform.position;
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime * elevatorSpeed;
+            transform.position = Vector3.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
+
+        transform.position = targetPos;
+        floorRoutine = null;
+
     }
+
 }
